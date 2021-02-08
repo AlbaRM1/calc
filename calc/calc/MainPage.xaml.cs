@@ -11,7 +11,8 @@ namespace calc
 {
     public partial class MainPage : ContentPage
     {
-        int[] number = new int[2];
+        double[] number = new double[2];
+        double result;
         string @operator;
 
         public MainPage()
@@ -20,22 +21,43 @@ namespace calc
         }
         private void clear(object sender, EventArgs e)
         {
+            @operator = null;
+            number[0] = 0;
             textCalc.Text = null;
         }
         
         private void delen(object sender, EventArgs e)
         {
-            textCalc.Text = textCalc.Text + "/";
+            try
+            {
+                @operator = "/";
+                number[0] = double.Parse(textCalc.Text);
+                textCalc.Text = null;
+            }
+            catch (Exception)
+            {}
+
         }
         
         private void umnoj(object sender, EventArgs e)
         {
-            textCalc.Text = textCalc.Text + "*";
+            try
+            {
+                @operator = "*";
+                number[0] = double.Parse(textCalc.Text);
+                textCalc.Text = null;
+            }
+            catch (Exception)
+            { }
         }
         
         private void delete(object sender, EventArgs e)
         {
-            textCalc.Text = textCalc.Text.Substring(0, textCalc.Text.Length - 1);
+            try
+            {
+                textCalc.Text = textCalc.Text.Substring(0, textCalc.Text.Length - 1);
+            }
+            catch (Exception) { }
         }
 
         private void seven(object sender, EventArgs e)
@@ -55,7 +77,14 @@ namespace calc
 
         private void minus(object sender, EventArgs e)
         {
-            textCalc.Text = textCalc.Text + "-";
+            try
+            {
+                @operator = "-";
+                number[0] = double.Parse(textCalc.Text);
+                textCalc.Text = null;
+            }
+            catch (Exception)
+            { }
         }
 
         private void four(object sender, EventArgs e)
@@ -75,7 +104,14 @@ namespace calc
 
         private void plus(object sender, EventArgs e)
         {
-            textCalc.Text = textCalc.Text + "+";
+            try
+            {
+                @operator = "+";
+                number[0] = double.Parse(textCalc.Text);
+                textCalc.Text = null;
+            }
+            catch (Exception)
+            { }
         }
 
         private void one(object sender, EventArgs e)
@@ -95,10 +131,79 @@ namespace calc
 
         private void ravno(object sender, EventArgs e)
         {
-            Console.WriteLine(textCalc.Text);
-            object a = new DataTable().Compute(textCalc.Text, null);
-            
-            textCalc.Text = a.ToString();
+            switch (@operator)
+            {
+                case "+":
+                    {
+                        try
+                        {
+                            number[1] = double.Parse(textCalc.Text);
+                            result = number[0] + number[1];
+
+                            textCalc.Text = result.ToString();
+                            break;
+                        }
+                        catch (Exception)
+                        {
+                            textCalc.Text = "ERROR";
+                            break;
+                        }
+
+                    }
+
+                case "-":
+                    {
+                        try
+                        {
+                            number[1] = double.Parse(textCalc.Text);
+                            result = number[0] - number[1];
+
+                            textCalc.Text = result.ToString();
+                            break;
+                        }
+                        catch (Exception)
+                        {
+                            textCalc.Text = "ERROR";
+                            break;
+                        }
+                    }
+
+                case "*":
+                    {
+                        try
+                        {
+                            number[1] = double.Parse(textCalc.Text);
+                            result = number[0] * number[1];
+
+                            textCalc.Text = result.ToString();
+                            break;
+                        }
+                        catch (Exception)
+                        {
+                            textCalc.Text = "ERROR";
+                            break;
+                        }
+                    }
+
+                case "/":
+                    {
+                        try
+                        {
+                            number[1] = double.Parse(textCalc.Text);
+                            result = number[0] / number[1];
+
+                            textCalc.Text = result.ToString();
+                            break;
+                        }
+                        catch (Exception)
+                        {
+                            textCalc.Text = "ERROR";
+                            break;
+                        }
+                    }
+                default:
+                    break;
+            }
         }
 
         private void nol(object sender, EventArgs e)
