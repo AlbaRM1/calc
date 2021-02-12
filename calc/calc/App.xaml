@@ -3,6 +3,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="calc.App">
     <Application.Resources>
+        <Color x:Key="BgContentPageLight">#ededed</Color>
+        <Color x:Key="BgContentPageDark">#121212</Color>
+        
+        <Color x:Key="BgColorMainLight">#cbcfc6</Color>
+        <Color x:Key="BgColorMainDark">#343039</Color>
+
+        <Color x:Key="BgColorNotMainLight">#e0e4db</Color>
+        <Color x:Key="BgColorNotMainDark">#1F1B24</Color>
+
+        <Color x:Key="TxtColorLight">#242422</Color>
+        <Color x:Key="TxtColorDark">#DBDBDD</Color>
+
+        <Color x:Key="FrameColorLight">#d6d6d6</Color>
+        <Color x:Key="FrameColorDark">#292929</Color>
+        
+        <Style x:Key="FrameStyle" TargetType="Frame">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource FrameColorLight}, Dark={StaticResource FrameColorDark}}"/>
+        </Style>
+        
+        <Style x:Key="ButtonStyleMain" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BgColorMainLight}, Dark={StaticResource BgColorMainDark}}"/>
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TxtColorLight}, Dark={StaticResource TxtColorDark}}"/>
+        </Style>
+        
+        <Style x:Key="ButtonStyleNotMain" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BgColorNotMainLight}, Dark={StaticResource BgColorNotMainDark}}"/>
+            <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TxtColorLight}, Dark={StaticResource TxtColorDark}}"/>
+        </Style>
+
+        <Style x:Key="ContentPageStyle" TargetType="ContentPage">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource BgContentPageLight}, Dark={StaticResource BgContentPageDark}}"/>
+        </Style>
 
     </Application.Resources>
 </Application>

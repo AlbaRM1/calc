@@ -1,4 +1,5 @@
-﻿using System;
+﻿using calcShell;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace calc
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new shell();
         }
 
         protected override void OnStart()

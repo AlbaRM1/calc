@@ -2,8 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="calc.MainPage"
-             Background="#121212">
+             Style="{StaticResource ContentPageStyle}"
+             Title="Calc">
+    
     <ContentPage.Content>
+        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -20,171 +23,154 @@
                 <RowDefinition Height="100*" />
                 <RowDefinition Height="100*" />
             </Grid.RowDefinitions>
-            <Frame BackgroundColor="#292929"
+            <Frame Style="{StaticResource FrameStyle}"
                    Grid.ColumnSpan="4">
 
                 <Label
                    x:Name="textCalc"
-                   TextColor="#DBDBDD"
+                   Style="{StaticResource FrameStyle}"
                    HorizontalTextAlignment="End"
                    VerticalTextAlignment="End"
                    FontSize="64"
                    />
 
             </Frame>
-            <!-- 1 строка -->
+            <!-- 1 строка  Style="{StaticResource ButtonStyleNotMain}" -->
             <Button Text="С"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="0"
                     Grid.Row="1"
-                    BackgroundColor="#1F1B24"
                     Clicked="clear"/>
 
             <Button Text="/"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="1"
                     Grid.Row="1"
-                    BackgroundColor="#1F1B24"
                     Clicked="delen"
                         />
             <Button Text="*"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="2"
                     Grid.Row="1"
-                    BackgroundColor="#1F1B24"
                     Clicked="umnoj"
                         />
             <Button Text="⌫"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="3"
                     Grid.Row="1"
-                    BackgroundColor="#1F1B24"
                     Clicked="delete"
                         />
 
             <!-- 2 строка -->
             <Button Text="7"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="0"
                     Grid.Row="2"
-                    BackgroundColor="#343039"
                     Clicked="seven"
                     />
 
             <Button Text="8"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="1"
                     Grid.Row="2"
-                    BackgroundColor="#343039"
                     Clicked="eight"
                     />
             <Button Text="9"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="2"
                     Grid.Row="2"
-                    BackgroundColor="#343039"
                     Clicked="nine"
                     />
             <Button Text="-"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="3"
                     Grid.Row="2"
-                    BackgroundColor="#1F1B24"
+                    
                     Clicked="minus"
                      />
             <!-- 3 строка -->
             <Button Text="4"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="0"
                     Grid.Row="3"
-                    BackgroundColor="#343039"
                     Clicked="four"
                     />
 
             <Button Text="5"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="1"
                     Grid.Row="3"
-                    BackgroundColor="#343039"
                     Clicked="five"
                     />
             <Button Text="6"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="2"
                     Grid.Row="3"
-                    BackgroundColor="#343039"
                     Clicked="six"
                     />
             <Button Text="+"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="3"
                     Grid.Row="3"
-                    BackgroundColor="#1F1B24"
                     Clicked="plus"
                     />
             <!-- 4 строка -->
             <Button Text="1"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="0"
                     Grid.Row="4"
-                    BackgroundColor="#343039"
                     Clicked="one"
                     />
             <Button Text="2"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="1"
                     Grid.Row="4"
-                    BackgroundColor="#343039"
                     Clicked="two"
                     />
             <Button Text="3"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="2"
                     Grid.Row="4"
-                    BackgroundColor="#343039"
                     Clicked="three"
                     />
             <Button Text="="
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="3"
                     Grid.Row="4"
                     Grid.RowSpan="2"
-                    BackgroundColor="#1F1B24"
                     Clicked="ravno"
                     />
 
             <!-- 5 строка -->
             <Button Text="0"
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleMain}"
                     FontSize="40"
                     Grid.Column="0"
                     Grid.Row="5"
                     Grid.ColumnSpan="2"
-                    BackgroundColor="#343039"
                     Clicked="nol"
                     />
             <Button Text=","
-                    TextColor="#DBDBDD"
+                    Style="{StaticResource ButtonStyleNotMain}"
                     FontSize="40"
                     Grid.Column="2"
                     Grid.Row="5"
-                    BackgroundColor="#343039"
                     Clicked="zapyat"
                     />
         </Grid>

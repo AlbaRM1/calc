@@ -25,7 +25,7 @@ namespace calc
             number[0] = 0;
             textCalc.Text = null;
         }
-        
+
         private void delen(object sender, EventArgs e)
         {
             try
@@ -35,10 +35,10 @@ namespace calc
                 textCalc.Text = null;
             }
             catch (Exception)
-            {}
+            { }
 
         }
-        
+
         private void umnoj(object sender, EventArgs e)
         {
             try
@@ -50,7 +50,7 @@ namespace calc
             catch (Exception)
             { }
         }
-        
+
         private void delete(object sender, EventArgs e)
         {
             try
