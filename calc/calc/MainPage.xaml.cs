@@ -19,13 +19,25 @@ namespace calc
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            object Theme;
+
+            if (App.Current.Properties.TryGetValue("Theme", out Theme))
+            {
+                Console.WriteLine($"Theme: {Theme}");
+            }
+            base.OnAppearing();
+        }
+
         private void clear(object sender, EventArgs e)
         {
             @operator = null;
             number[0] = 0;
             textCalc.Text = null;
         }
-
+        
         private void delen(object sender, EventArgs e)
         {
             try
@@ -79,9 +91,17 @@ namespace calc
         {
             try
             {
-                @operator = "-";
-                number[0] = double.Parse(textCalc.Text);
-                textCalc.Text = null;
+                if (@operator == "+" | @operator == "-" | @operator == "*" | @operator == "/")
+                {
+                    textCalc.Text = textCalc.Text + "-";
+                }
+
+                else
+                {
+                    @operator = "-";
+                    number[0] = double.Parse(textCalc.Text);
+                    textCalc.Text = null;
+                }
             }
             catch (Exception)
             { }

@@ -4,14 +4,15 @@
              xmlns:local="clr-namespace:calc"
              x:Class="calcShell.shell">
 
-    <FlyoutItem Title="Calculator"
+    <FlyoutItem Title="Калькулятор"
                 Shell.TabBarIsVisible="False"
                 FlyoutDisplayOptions="AsMultipleItems">
 
-        <ShellContent Title="Calculator"
+        <ShellContent Title="Калькулятор"
                       Icon=""
                       ContentTemplate="{DataTemplate local:MainPage}"
                       />
+
 
     </FlyoutItem>
 
